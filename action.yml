@@ -25,5 +25,5 @@ inputs:
     required: false
 
 runs:
-  using: "node14" # Use current LTS version
+  using: "node12"
   main: "dist/index.js"
