@@ -216,7 +216,7 @@ function getCheckPayload(results: FormattedTestResults, cwd: string, {out, err}:
   const payload: RestEndpointMethodTypes["checks"]["create"]["parameters"] = {
     ...context.repo,
     head_sha: getSha(),
-    name: ACTION_NAME,
+    name: core.getInput("check-name", { required: false }) || ACTION_NAME,
     status: "completed",
     conclusion: results.success ? "success" : "failure",
     output: {
